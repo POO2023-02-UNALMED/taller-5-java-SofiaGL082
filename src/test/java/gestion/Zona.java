@@ -40,7 +40,7 @@ public class Zona {
 		
 	}
 	
-	public int cantidadAnimales() {
+	public static int cantidadAnimales() {
 		return animales.size();
 	}
 
