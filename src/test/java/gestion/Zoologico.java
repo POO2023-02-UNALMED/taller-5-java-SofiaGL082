@@ -42,8 +42,8 @@ public class Zoologico {
 		return Animal.getTotalAnimales();
 	}
 	
-	public Zona getZona(int i) {
-		return zonas.get(i);
+	public List<Zona> getZona() {
+		return zonas;
 	}
 
 }
