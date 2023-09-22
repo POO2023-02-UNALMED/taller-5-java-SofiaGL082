@@ -8,10 +8,10 @@ import gestion.Zoologico;
 
 public class Animal {
 	private static int totalAnimales = 0;
-	private String nombre;
-	private int edad;
-	private String habitat;
-	private String genero;
+	private static String nombre;
+	private static int edad;
+	private static String habitat;
+	private static String genero;
 	private List<Zona> zona = new ArrayList<Zona>();
 	private Zoologico zoo;
 	
@@ -23,10 +23,10 @@ public class Animal {
 	
 	//Constructor de atributos
 	public Animal(String nombre, int edad, String habitat, String genero) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		Animal.nombre = nombre;
+		Animal.edad = edad;
+		Animal.habitat = habitat;
+		Animal.genero = genero;
 		totalAnimales++;
 	}
 	
@@ -39,29 +39,29 @@ public class Animal {
 		return Animal.totalAnimales;
 	}
 	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public static void setNombre(String nombre) {
+		Animal.nombre = nombre;
 	}
 	public String getNombre() {
 		return nombre;
 	}
 	
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public static void setEdad(int edad) {
+		Animal.edad = edad;
 	}
 	public int getEdad() {
 		return edad;
 	}
 	
-	public void setHabitat(String habitat) {
-		this.habitat = habitat;
+	public static void setHabitat(String habitat) {
+		Animal.habitat = habitat;
 	}
 	public String getHabitat() {
 		return habitat;
 	}
 	
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public static void setGenero(String genero) {
+		Animal.genero = genero;
 	}
 	public String getGenero() {
 		return genero;
