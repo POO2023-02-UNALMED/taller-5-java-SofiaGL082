@@ -40,21 +40,17 @@ public class Ave extends Animal{
 	public String movimiento() {
 		return "volar";
 	}
-	public static void crearHalcon(String nombre, int edad, String genero) {
-		Animal.setNombre(nombre);
-		Animal.setEdad(edad);
-		Animal.setHabitat("montanas");
-		Animal.setGenero(genero);
-		Ave.colorPlumas = "cafe glorioso";
+	public static Ave crearHalcon(String nombre, int edad, String genero) {
+		Ave halcon = new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
 		halcones++;
+		listado.add(halcon);
+		return halcon;
 	}
-	public static void crearAguila(String nombre, int edad, String genero) {
-		Animal.setNombre(nombre);
-		Animal.setEdad(edad);
-		Animal.setHabitat("montanas");
-		Animal.setGenero(genero);
-		Ave.colorPlumas = "blanco y amarillo";
+	public static Ave crearAguila(String nombre, int edad, String genero) {
+		Ave aguila = new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
 		aguilas++;
+		listado.add(aguila);
+		return aguila;
 	}
 
 }

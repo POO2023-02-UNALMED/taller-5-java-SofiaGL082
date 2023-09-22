@@ -50,24 +50,18 @@ public class Anfibio extends Animal{
 	public String movimiento() {
 		return "Saltar";
 	}
-	public static void crearRana(String nombre, int edad, String genero) {
-		Animal.setNombre(nombre);
-		Animal.setEdad(edad);
-		Animal.setHabitat("selva");
-		Animal.setGenero(genero);
-		Anfibio.colorPiel = "rojo";
-		Anfibio.venenoso = true;
+	public static Anfibio crearRana(String nombre, int edad, String genero) {
+		Anfibio rana = new Anfibio(nombre, edad, "selva", genero, "rojo", true);
 		ranas++;
+		listado.add(rana);
+		return rana;
 		
 	}
-	public static void crearSalamandra(String nombre, int edad, String genero) {
-		Animal.setNombre(nombre);
-		Animal.setEdad(edad);
-		Animal.setHabitat("selva");
-		Animal.setGenero(genero);
-		Anfibio.colorPiel = "negro y amarillo";
-		Anfibio.venenoso = false;
+	public static Anfibio crearSalamandra(String nombre, int edad, String genero) {
+		Anfibio salamandra = new Anfibio(nombre, edad, "selva", genero, "negro y amarillo", false);
 		salamandras++;
+		listado.add(salamandra);
+		return salamandra;
 		
 	}
 
