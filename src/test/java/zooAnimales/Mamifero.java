@@ -28,7 +28,7 @@ public class Mamifero extends Animal{
 	public void setPelaje(boolean pelaje) {
 		Mamifero.pelaje = pelaje;
 	}
-	public boolean getPelaje() {
+	public boolean isPelaje() {
 		return pelaje;
 	}
 	
@@ -51,8 +51,10 @@ public class Mamifero extends Animal{
 		Mamifero.pelaje = true;
 		Mamifero.patas = 4; 
 		caballos++;
+
 		
 	}
+	
 	public static void crearLeon(String nombre, int edad, String genero) {
 		Animal.setNombre(nombre);
 		Animal.setEdad(edad);
