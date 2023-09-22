@@ -40,6 +40,7 @@ public class Ave extends Animal{
 	public String movimiento() {
 		return "volar";
 	}
+	
 	public static Ave crearHalcon(String nombre, int edad, String genero) {
 		Ave halcon = new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
 		halcones++;

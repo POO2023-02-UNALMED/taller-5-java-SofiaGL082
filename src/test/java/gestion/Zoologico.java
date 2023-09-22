@@ -2,7 +2,6 @@ package gestion;
 
 import java.util.ArrayList;
 import java.util.List;
-import zooAnimales.Animal;
 
 public class Zoologico {
 	private String nombre;
@@ -39,7 +38,7 @@ public class Zoologico {
 	}
 	
 	public int cantidadTotalAnimales() {
-		return Animal.getTotalAnimales();
+		return Zona.cantidadAnimales();
 	}
 	
 	public List<Zona> getZona() {

@@ -48,8 +48,9 @@ public class Anfibio extends Animal{
 	
 	@Override
 	public String movimiento() {
-		return "Saltar";
+		return "saltar";
 	}
+	
 	public static Anfibio crearRana(String nombre, int edad, String genero) {
 		Anfibio rana = new Anfibio(nombre, edad, "selva", genero, "rojo", true);
 		ranas++;

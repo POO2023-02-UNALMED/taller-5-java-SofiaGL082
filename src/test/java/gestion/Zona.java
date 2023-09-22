@@ -8,7 +8,7 @@ import zooAnimales.Animal;
 public class Zona {
 	private String nombre;
 	private Zoologico zoo;
-	private List<Animal> animales = new ArrayList<Animal>();
+	private static List<Animal> animales = new ArrayList<Animal>();
 	
 	//Constructor vacio
 	public Zona() {
@@ -40,7 +40,7 @@ public class Zona {
 		
 	}
 	
-	public int cantidadAnimales() {
+	public static int cantidadAnimales() {
 		return animales.size();
 	}
 
