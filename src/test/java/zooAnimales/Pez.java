@@ -7,8 +7,8 @@ public class Pez extends Animal{
 	private static List<Pez> listado = new ArrayList<Pez>();
 	public static int salmones = 0;
 	public static int bacalaos = 0;
-	private String colorEscamas;
-	private int cantidadAletas;
+	private static String colorEscamas;
+	private static int cantidadAletas;
 	
 	//Constructor vacio
 	public Pez() {
@@ -19,22 +19,22 @@ public class Pez extends Animal{
 	//Constructor atributos
 	public Pez(String nombre, int edad, String habitat, String genero, String colorE, int cantAletas) {
 		super(nombre, edad, habitat, genero);
-		this.colorEscamas = colorE;
-		this.cantidadAletas = cantAletas;
+		Pez.colorEscamas = colorE;
+		Pez.cantidadAletas = cantAletas;
 		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
 	
 	public void setColorEscamas(String colorEsc) {
-		this.colorEscamas = colorEsc;
+		Pez.colorEscamas = colorEsc;
 	}
 	public String getColorEscamas() {
 		return colorEscamas;
 	}
 	
 	public void setCantidadAletas(int cantAletas) {
-		this.cantidadAletas = cantAletas;
+		Pez.cantidadAletas = cantAletas;
 	}
 	public int getCantidadAletas() {
 		return cantidadAletas;
@@ -50,26 +50,23 @@ public class Pez extends Animal{
 	public String movimiento() {
 		return "nadar";
 	}
-	public void crearSalmon(String nombre, int edad, String genero) {
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setHabitat("oceano");
-		super.setGenero(genero);
-		this.colorEscamas = "rojo";
-		this.cantidadAletas = 6;
+	public static void crearSalmon(String nombre, int edad, String genero) {
+		Animal.setNombre(nombre);
+		Animal.setEdad(edad);
+		Animal.setHabitat("oceano");
+		Animal.setGenero(genero);
+		Pez.colorEscamas = "rojo";
+		Pez.cantidadAletas = 6;
 		salmones++;
-		listado.add(this);
-		
 	}
-	public void crearBacalao(String nombre, int edad, String genero) {
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setHabitat("oceano");
-		super.setGenero(genero);
-		this.colorEscamas = "gris";
-		this.cantidadAletas = 6;
+	public static void crearBacalao(String nombre, int edad, String genero) {
+		Animal.setNombre(nombre);
+		Animal.setEdad(edad);
+		Animal.setHabitat("oceano");
+		Animal.setGenero(genero);
+		Pez.colorEscamas = "gris";
+		Pez.cantidadAletas = 6;
 		bacalaos++;
-		listado.add(this);
 	}
 
 }

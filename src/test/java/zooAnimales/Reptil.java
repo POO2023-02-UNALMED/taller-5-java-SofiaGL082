@@ -7,8 +7,8 @@ public class Reptil extends Animal{
 	private static List<Reptil> listado = new ArrayList<Reptil>();
 	public static int iguanas = 0;
 	public static int serpientes = 0;
-	private String colorEscamas;
-	private int largoCola;
+	private static String colorEscamas;
+	private static int largoCola;
 	
 	//Constructor vacio
 	public Reptil() {
@@ -19,22 +19,22 @@ public class Reptil extends Animal{
 	//Constructor atributos
 	public Reptil(String nombre, int edad, String habitat, String genero, String cEscamas, int largoCola) {
 		super(nombre, edad, habitat, genero);
-		this.colorEscamas = cEscamas;
-		this.largoCola = largoCola;
+		Reptil.colorEscamas = cEscamas;
+		Reptil.largoCola = largoCola;
 		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
 	
 	public void setColorEscamas(String colorEscamas) {
-		this.colorEscamas = colorEscamas;
+		Reptil.colorEscamas = colorEscamas;
 	}
 	public String getColorEscamas() {
 		return colorEscamas;
 	}
 	
 	public void setLargoCola(int largoCola) {
-		this.largoCola = largoCola;
+		Reptil.largoCola = largoCola;
 	}
 	public int getLargoCola() {
 		return largoCola;
@@ -49,27 +49,23 @@ public class Reptil extends Animal{
 	public String movimiento() {
 		return "reptar";
 	}
-	public void crearIguana(String nombre, int edad, String genero) {
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setHabitat("humedal");
-		super.setGenero(genero);
-		this.colorEscamas = "verde";
-		this.largoCola = 3;
+	public static void crearIguana(String nombre, int edad, String genero) {
+		Animal.setNombre(nombre);
+		Animal.setEdad(edad);
+		Animal.setHabitat("humedal");
+		Animal.setGenero(genero);
+		Reptil.colorEscamas = "verde";
+		Reptil.largoCola = 3;
 		iguanas++;
-		listado.add(this);
-		
 	}
-	public void crearSerpiente(String nombre, int edad, String genero) {
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setHabitat("jungla");
-		super.setGenero(genero);
-		this.colorEscamas = "blanco";
-		this.largoCola = 1;
+	public static void crearSerpiente(String nombre, int edad, String genero) {
+		Animal.setNombre(nombre);
+		Animal.setEdad(edad);
+		Animal.setHabitat("jungla");
+		Animal.setGenero(genero);
+		Reptil.colorEscamas = "blanco";
+		Reptil.largoCola = 1;
 		serpientes++;
-		listado.add(this);
-		
 	}
 
 }
