@@ -7,6 +7,7 @@ public class Zoologico {
 	private String nombre;
 	private String ubicacion;
 	private List<Zona> zonas = new ArrayList <Zona>();
+	private int cantTotalAnimales = 0;
 	
 	//Constructor vacio
 	public Zoologico() {
@@ -38,7 +39,10 @@ public class Zoologico {
 	}
 	
 	public int cantidadTotalAnimales() {
-		return Zona.cantidadAnimales();
+		for (int i=0; i<zonas.size(); i++) {
+			cantTotalAnimales += zonas.get(i).cantidadAnimales();
+		}
+		return cantTotalAnimales;
 	}
 	
 	public List<Zona> getZona() {
