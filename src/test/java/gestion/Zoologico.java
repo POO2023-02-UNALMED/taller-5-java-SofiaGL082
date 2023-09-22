@@ -7,7 +7,6 @@ public class Zoologico {
 	private String nombre;
 	private String ubicacion;
 	private List<Zona> zonas = new ArrayList <Zona>();
-	private int cantTotalAnimales = 0;
 	
 	//Constructor vacio
 	public Zoologico() {
