@@ -7,8 +7,8 @@ public class Mamifero extends Animal{
 	private static List<Mamifero> listado = new ArrayList<Mamifero>();
 	public static int caballos = 0;
 	public static int leones = 0;
-	private static boolean pelaje;
-	private static int patas;
+	private boolean pelaje;
+	private int patas;
 	
 	//Constructor vacio
 	public Mamifero() {
@@ -18,22 +18,22 @@ public class Mamifero extends Animal{
 	//Constructor atributos
 	public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje, int patas) {
 		super(nombre, edad, habitat, genero);
-		Mamifero.pelaje = pelaje;
-		Mamifero.patas = patas;
+		this.pelaje = pelaje;
+		this.patas = patas;
 		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
 	
 	public void setPelaje(boolean pelaje) {
-		Mamifero.pelaje = pelaje;
+		this.pelaje = pelaje;
 	}
 	public boolean isPelaje() {
 		return pelaje;
 	}
 	
 	public void setPatas(int patas) {
-		Mamifero.patas = patas;
+		this.patas = patas;
 	}
 	public int getPatas() {
 		return patas;

@@ -7,7 +7,7 @@ public class Ave extends Animal{
 	private static List<Ave> listado = new ArrayList<Ave>();
 	public static int halcones = 0;
 	public static int aguilas = 0;
-	private static String colorPlumas;
+	private String colorPlumas;
 	
 	//Constructor vacio
 	public Ave() {
@@ -17,14 +17,14 @@ public class Ave extends Animal{
 	//Constructor atributos
 	public Ave(String nombre, int edad, String habitat, String genero, String cPlumas) {
 		super(nombre, edad, habitat, genero);
-		Ave.colorPlumas = cPlumas;
+		this.colorPlumas = cPlumas;
 		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
 
 	public void setColorPlumas(String colorPlumas) {
-		Ave.colorPlumas = colorPlumas;
+		this.colorPlumas = colorPlumas;
 	}
 	public String getColorPlumas() {
 		return colorPlumas;

@@ -7,8 +7,8 @@ public class Pez extends Animal{
 	private static List<Pez> listado = new ArrayList<Pez>();
 	public static int salmones = 0;
 	public static int bacalaos = 0;
-	private static String colorEscamas;
-	private static int cantidadAletas;
+	private String colorEscamas;
+	private int cantidadAletas;
 	
 	//Constructor vacio
 	public Pez() {
@@ -19,22 +19,22 @@ public class Pez extends Animal{
 	//Constructor atributos
 	public Pez(String nombre, int edad, String habitat, String genero, String colorE, int cantAletas) {
 		super(nombre, edad, habitat, genero);
-		Pez.colorEscamas = colorE;
-		Pez.cantidadAletas = cantAletas;
+		this.colorEscamas = colorE;
+		this.cantidadAletas = cantAletas;
 		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
 	
 	public void setColorEscamas(String colorEsc) {
-		Pez.colorEscamas = colorEsc;
+		this.colorEscamas = colorEsc;
 	}
 	public String getColorEscamas() {
 		return colorEscamas;
 	}
 	
 	public void setCantidadAletas(int cantAletas) {
-		Pez.cantidadAletas = cantAletas;
+		this.cantidadAletas = cantAletas;
 	}
 	public int getCantidadAletas() {
 		return cantidadAletas;
