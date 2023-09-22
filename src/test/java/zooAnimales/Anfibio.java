@@ -1,7 +1,10 @@
 package zooAnimales;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Anfibio extends Animal{
-	private Anfibio[] listado;
+	private static List<Anfibio> listado = new ArrayList<Anfibio>();
 	public static int salamandras = 0;
 	public static int ranas = 0;
 	private String colorPiel;
@@ -9,6 +12,7 @@ public class Anfibio extends Animal{
 	
 	//Constructor vacio
 	public Anfibio() {
+		listado.add(this);
 		
 	}
 	
@@ -17,16 +21,10 @@ public class Anfibio extends Animal{
 		super(nombre, edad, habitat, genero);
 		this.colorPiel = cPiel;
 		this.venenoso = vene;
+		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
-	
-	public void setListado(Anfibio[] listado) {
-		this.listado = listado;
-	}
-	public Anfibio[] getListado() {
-		return listado;
-	}
 	
 	public void setColorPiel(String colorPiel) {
 		this.colorPiel = colorPiel;
@@ -44,7 +42,7 @@ public class Anfibio extends Animal{
 	
 	//Metodos de Anfibio
 	public static int cantidadAnfibios() {
-		return ranas+salamandras;
+		return listado.size();
 		
 	}
 	
@@ -60,6 +58,7 @@ public class Anfibio extends Animal{
 		this.colorPiel = "rojo";
 		this.venenoso = true;
 		ranas++;
+		listado.add(this);
 		
 	}
 	public void crearSalamandra(String nombre, int edad, String genero) {
@@ -70,6 +69,7 @@ public class Anfibio extends Animal{
 		this.colorPiel = "negro y amarillo";
 		this.venenoso = false;
 		salamandras++;
+		listado.add(this);
 		
 	}
 

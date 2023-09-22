@@ -1,7 +1,10 @@
 package zooAnimales;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Reptil extends Animal{
-	private Reptil[] listado;
+	private static List<Reptil> listado = new ArrayList<Reptil>();
 	public static int iguanas = 0;
 	public static int serpientes = 0;
 	private String colorEscamas;
@@ -9,6 +12,7 @@ public class Reptil extends Animal{
 	
 	//Constructor vacio
 	public Reptil() {
+		listado.add(this);
 		
 	}
 	
@@ -17,15 +21,10 @@ public class Reptil extends Animal{
 		super(nombre, edad, habitat, genero);
 		this.colorEscamas = cEscamas;
 		this.largoCola = largoCola;
+		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
-	public void setListado(Reptil[] listado) {
-		this.listado = listado;
-	}
-	public Reptil[] getListado() {
-		return listado;
-	}
 	
 	public void setColorEscamas(String colorEscamas) {
 		this.colorEscamas = colorEscamas;
@@ -43,7 +42,7 @@ public class Reptil extends Animal{
 	
 	//Metodos de Reptil
 	public static int cantidadReptiles() {
-		return iguanas+serpientes;
+		return listado.size();
 	}
 	
 	@Override
@@ -58,6 +57,7 @@ public class Reptil extends Animal{
 		this.colorEscamas = "verde";
 		this.largoCola = 3;
 		iguanas++;
+		listado.add(this);
 		
 	}
 	public void crearSerpiente(String nombre, int edad, String genero) {
@@ -68,6 +68,7 @@ public class Reptil extends Animal{
 		this.colorEscamas = "blanco";
 		this.largoCola = 1;
 		serpientes++;
+		listado.add(this);
 		
 	}
 

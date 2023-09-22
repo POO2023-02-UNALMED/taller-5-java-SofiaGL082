@@ -1,7 +1,10 @@
 package zooAnimales;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pez extends Animal{
-	private Pez[] listado;
+	private static List<Pez> listado = new ArrayList<Pez>();
 	public static int salmones = 0;
 	public static int bacalaos = 0;
 	private String colorEscamas;
@@ -9,6 +12,7 @@ public class Pez extends Animal{
 	
 	//Constructor vacio
 	public Pez() {
+		listado.add(this);
 		
 	}
 	
@@ -17,15 +21,10 @@ public class Pez extends Animal{
 		super(nombre, edad, habitat, genero);
 		this.colorEscamas = colorE;
 		this.cantidadAletas = cantAletas;
+		listado.add(this);
 	}
 	
 	//Metodos get y set para atributos privados
-	public void setListado(Pez[] listado) {
-		this.listado = listado;
-	}
-	public Pez[] getListado() {
-		return listado;
-	}
 	
 	public void setColorEscamas(String colorEsc) {
 		this.colorEscamas = colorEsc;
@@ -43,7 +42,7 @@ public class Pez extends Animal{
 	
 	//Metodos de Pez
 	public static int cantidadPeces() {
-		return salmones+bacalaos;
+		return listado.size();
 		
 	}
 	
@@ -59,6 +58,7 @@ public class Pez extends Animal{
 		this.colorEscamas = "rojo";
 		this.cantidadAletas = 6;
 		salmones++;
+		listado.add(this);
 		
 	}
 	public void crearBacalao(String nombre, int edad, String genero) {
@@ -69,7 +69,7 @@ public class Pez extends Animal{
 		this.colorEscamas = "gris";
 		this.cantidadAletas = 6;
 		bacalaos++;
-		
+		listado.add(this);
 	}
 
 }
